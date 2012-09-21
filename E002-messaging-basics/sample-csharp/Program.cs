@@ -299,5 +299,21 @@ namespace E002
                 return string.Format("Add {0} {1} to basket", Quantity, Name);
             }
         }
+
+        [Serializable]
+        public class RemoveProductFromBasket
+        {
+            public readonly string Name;
+
+            public RemoveProductFromBasket(string name)
+            {
+                Name = name;
+            }
+
+            public override string ToString()
+            {
+                return string.Format("Remove all {0} from basket", Name);
+            }
+        }
     }
 }
