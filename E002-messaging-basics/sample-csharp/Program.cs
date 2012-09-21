@@ -216,6 +216,20 @@ namespace E002
 
             NB: Don't hesitate to ask questions, if you get any.
             ");
+
+            queue.Enqueue(new RemoveProductFromBasket("shrimps"));
+
+            while (queue.Count > 0)
+            {
+                ApplyMessage(basket, queue.Dequeue());
+            }
+
+            foreach (var total in basket.GetProductTotals())
+            {
+                Console.WriteLine("  {0}: {1}", total.Key, total.Value);
+            }
+
+            Console.ReadLine();
         }
 
         static void ApplyMessage(ProductBasket basket, object message)
