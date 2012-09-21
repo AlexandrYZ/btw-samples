@@ -267,9 +267,6 @@ namespace E002
             Console.ForegroundColor = oldColor;
         }
 
-        
-
-
         public class ProductBasket
         {
             readonly IDictionary<string, double> _products = new Dictionary<string, double>(); 
