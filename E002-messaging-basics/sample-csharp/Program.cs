@@ -278,6 +278,20 @@ namespace E002
                 AddProduct(toBasketMessage.Name, toBasketMessage.Quantity);
             }
 
+            public void RemoveProduct(string name)
+            {
+                if (!_products.ContainsKey(name)) return;
+
+                _products.Remove(name);
+                Console.WriteLine("Shopping Basket said: I removed all of '{0}'", name);
+            }
+
+            public void When(RemoveProductFromBasket e)
+            {
+                Console.Write("[Message Applied]: ");
+                RemoveProduct(e.Name);
+            }
+
             public IDictionary<string, double> GetProductTotals()
             {
                 return _products;
